@@ -322,7 +322,7 @@ function App() {
           <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }} >
             <Grid container spacing={3}>
 
-              <Grid item xs={5} >
+              <Grid item xs={4} >
                 <Paper elevation={6}
                   sx={{
                     p: 2,
@@ -344,7 +344,7 @@ function App() {
                           justifyContent="space-evenly"
                           alignItems="center"
                           sx={{mt:3}}
-                          spacing={4} >
+                          spacing={2} >
                             <Stack  
                           direction={'row'}
                           spacing={2}
@@ -374,7 +374,7 @@ function App() {
                             // disabled={analysisdisabled}
                             onClick={handleOpenLoading}
                           >
-                            Start Analysis
+                            Analyse
                           </Button>
                           
                           
@@ -386,29 +386,7 @@ function App() {
                           sx={{mt:3}}
                           spacing={4} >
                             
-                            <Stack 
-                            direction={'row'}>
-                            <Button
-                            component="label"
-                            disabled={tabledisabled}
-                            style={{padding:"0.5rem",paddingTop:"0.5rem",height:"3rem",marginTop:"0.3rem",borderRadius:'0rem'}}
-                            size='small'
-                            variant="contained"
-                            onClick={handleAssetsTable}
-                          >
-                            Assets Table
-                          </Button>
-                          <Button
-                            component="label"
-                            disabled={!tabledisabled}
-                            onClick={handleCveTable}
-                            style={{padding:"0.5rem",paddingTop:"0.5rem",height:"3rem",marginTop:"0.3rem",borderRadius:'0rem'}}
-                            size='small'
-                            variant="contained"
-                          >
-                            CVE Table
-                          </Button>
-                          </Stack>
+                           
 
 
                           <Button
@@ -429,7 +407,7 @@ function App() {
     
                 </Paper>
               </Grid>
-              <Grid item xs={2} >
+              <Grid item xs={3} >
                 <Paper elevation={6}
                   sx={{
                     p: 2,
@@ -439,8 +417,33 @@ function App() {
                   }}
                 >
                 <Typography component="span" variant='h5' sx={{color: 'black'}}>
-                    Asset Info
+                    Vulnerability Analysis
                   </Typography>
+                  <Stack  
+                          direction={'row'}
+                          justifyContent="space-evenly"
+                          alignItems="center"
+                          sx={{mt:3}}
+                          spacing={4} >
+                  <Autocomplete
+                  disablePortal
+                  id="combo-box-demo"
+                  options={protocolslist}
+                  sx={{ width: 300 }}
+                  renderInput={(params) => <TextField {...params} label="Asset" />}
+                />
+                <Button
+                  component="label"
+                  style={{padding:"1rem",paddingTop:"0.5rem",height:"3.4rem",marginTop:"0rem"}}
+                  sx={{color:'black',backgroundColor:'#e6de10',"&:hover": {backgroundColor: "#ccc50e" }}}
+
+                  size='small'
+                  color='success'
+                  variant="contained"
+                >
+                  Search
+                </Button>
+                </Stack>
               </Paper>
               </Grid>
 
@@ -484,16 +487,47 @@ function App() {
                   renderInput={(params) => <TextField {...params} label="Destination" />}
                 />
                   </Stack>
-
-                  <Button
+                  <Stack  
+                          direction={'row'}
+                          justifyContent="space-evenly"
+                          alignItems="center"
+                          sx={{mt:3}}
+                           >
+                            <Stack 
+                            direction={'row'}>
+                            <Button
                             component="label"
-                            style={{padding:"0.5rem",paddingTop:"0.5rem",height:"3rem",marginTop:"2rem",marginRight:"13rem",marginLeft:"13rem"}}
+                            disabled={tabledisabled}
+                            style={{padding:"0.5rem",paddingTop:"0.5rem",height:"3rem",marginTop:"0.3rem",borderRadius:'0rem'}}
+                            size='small'
+                            variant="contained"
+                            onClick={handleAssetsTable}
+                          >
+                            Assets Table
+                          </Button>
+                          <Button
+                            component="label"
+                            disabled={!tabledisabled}
+                            onClick={handleCveTable}
+                            style={{padding:"0.5rem",paddingTop:"0.5rem",height:"3rem",marginTop:"0.3rem",borderRadius:'0rem'}}
+                            size='small'
+                            variant="contained"
+                          >
+                            CVE Table
+                          </Button>
+                          </Stack>
+                        <Button
+                            component="label"
+                            style={{padding:"0.5rem",paddingTop:"0.5rem",height:"3rem",marginTop:"0.3rem"}}
                             size='small'
                             color='success'
                             variant="contained"
                           >
                             Apply Filters
                           </Button>
+
+                          
+                          </Stack>
                   
                 </Paper>
               </Grid>
