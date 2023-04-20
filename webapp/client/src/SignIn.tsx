@@ -13,7 +13,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Link, useNavigate} from "react-router-dom";
 import ParticleLinksBlue from './ParticleLinksBlue';
 import { AppBar, Toolbar, IconButton, Badge } from '@mui/material';
-
+import logo from './nexot.png';
 
 
 const theme = createTheme();
@@ -72,16 +72,17 @@ export default function SignIn({innerRef,stateChanger, ...rest}: any) {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-          SOC Analysis
+          SOC - Team Avinya
             </Typography>
             
           </Toolbar>
         </AppBar>
       <Container component="main" maxWidth="xs" >
         <CssBaseline />
+         <img src={logo} alt="Logo" style={{width:"25rem",marginTop:"5rem",marginRight:"9rem"}}/>
         <Box
           sx={{
-            marginTop: 15,
+            marginTop: 5,
             p:3,
             display: 'flex',
             borderRadius: '16px',

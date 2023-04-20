@@ -33,7 +33,6 @@ import ReactFlow, {
 import 'reactflow/dist/style.css';
 import './overview.css';
 import { Title } from '@mui/icons-material';
-import staticgraph from './staticgraph';
 import StaticGraph from './staticgraph';
 
 const minimapStyle = {
@@ -596,7 +595,7 @@ function App() {
             
           </DialogContentText> */}
           <div style={{ width: '72rem', height: '35rem' }}>
-                {/* <ReactFlow 
+                <ReactFlow 
                 nodes={nodes} 
                 edges={edges}
                 onNodesChange={onNodesChange}
@@ -605,8 +604,8 @@ function App() {
                 <Controls />
                 <Background color="#aaa" gap={8} />
                 <MiniMap style={minimapStyle} zoomable pannable />
-                </ReactFlow> */}
-                <StaticGraph/>
+                </ReactFlow>
+                {/* <StaticGraph/> */}
                 </div>
         </DialogContent>
         <DialogActions>
